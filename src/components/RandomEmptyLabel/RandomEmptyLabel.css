@@ -1,0 +1,17 @@
+.empty-label-container {
+    border-color: black;
+    border-style: dashed;
+    border-width: 1px;
+    padding: 20px;
+}
+
+.qr-code-container {
+    transform: translate(25%, 0%);
+    margin: 20px;
+}
+
+@media print {
+    .empty-label-container {
+        break-inside: avoid;
+    }
+}

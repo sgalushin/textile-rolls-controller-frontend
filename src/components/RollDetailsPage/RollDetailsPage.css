@@ -1,0 +1,38 @@
+.roll-highlighted {
+    border-style: solid;
+    border-width: 1px;
+    border-color: blue;
+}
+
+.roll-active {
+   font-weight: bolder;
+}
+
+.any-roll {
+    margin-bottom: 2rem;
+    padding: 1rem
+}
+
+.previous-version-of-descendant-roll {
+    margin-left: 5rem;
+}
+
+.original-rolls-container {
+    border-style: dashed;
+    border-color: darkseagreen;
+    border-width: 1px;
+    margin: 1rem;
+    padding: 1rem;
+}
+
+.descendant-rolls-container {
+    /*!*padding-left: 6rem;*!*/
+    /*borber-color: red;*/
+    /*border-width: 1px;*/
+    /*border-style: dashed;*/
+
+}
+
+.descendants-container {
+    padding-left: 3rem;
+}

@@ -1,0 +1,14 @@
+.print-page-container {
+    background-color: beige;
+    border-width: thin;
+    border-color: black;
+    text-align: center;
+    border-style: dashed;
+}
+
+.print-page {
+    text-align: left;
+}
+
+.print-page-container .title {
+}
