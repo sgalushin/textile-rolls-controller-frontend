@@ -25,3 +25,7 @@ The following environment variables must be set when running (`npm run`) or buil
 | `REACT_APP_PRODUCT_CATALOG_BASE_URL` | https://txrezwgyg3.execute-api.eu-west-1.amazonaws.com/Prod/ | Must be the value of CloudFormation stack's exported variable `TRC-${STAGE}-Products-API-URL`.            |
 | `REACT_APP_PRODUCT_CATALOG_PICTURE_BUCKET` | trc-st2-common-productimagesbucket-1y26als6ohdyd | Must be the value of CloudFormation stack's exported variable `TRC-${STAGE}-ProductImagesBucket`. |
 | `REACT_APP_ROLLS_BASE_URL`           | https://bazvjapr2a.execute-api.eu-west-1.amazonaws.com/Prod/ | Must be the value of an output key `APIAddress` of CloudFormation stack `trc-${STAGE}-rolls`. |
+
+## License
+
+This project is licensed under the terms of the MIT license. See the [LICENSE](./LICENSE.txt) file.
