@@ -10,7 +10,7 @@ Current implementation in React is an early draft; this frontend is supposed to 
  - **TRC Rolls Creator** (Web)
  - **TRC Rolls management and analytics** (Web)
 
-## Enviroment Variables
+## Environment Variables
 
 The following environment variables must be set when running (`npm run`) or building (`npm run build`).
 
