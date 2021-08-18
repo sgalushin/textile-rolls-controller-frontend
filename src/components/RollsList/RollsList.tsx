@@ -77,8 +77,8 @@ export const RollsList = () => {
       title: "Roll type",
       render: (row: any) => (
         <Space size="small">
-          {row.parentRoll == undefined ? <Tag color="geekblue">Original roll</Tag> : <Tag color="purple">Cut</Tag>}
-          {row.previousVersion == undefined ? <Tag color="green">First version</Tag> : <Tag color="orange">Correction</Tag>}
+          {row.parentRoll === undefined ? <Tag color="geekblue">Original roll</Tag> : <Tag color="purple">Cut</Tag>}
+          {row.previousVersion === undefined ? <Tag color="green">First version</Tag> : <Tag color="orange">Correction</Tag>}
         </Space>
       ),
     },

@@ -1,8 +1,7 @@
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { emptyEditRollState } from "./editRollState";
-import { fetchParentRoll } from "../cuttingStudio/cuttingStudioSlice";
 import { createRoll, getRoll, updateRoll } from "../../APIs/rollsAPI";
-import { ErrorIncorrectQrCode, RollRef } from "../../RollRef";
+import { RollRef } from "../../RollRef";
 import { getCurrentUserRepresentation } from "../../APIs/Auth";
 import { RootState } from "../store";
 import { fetchAllCharacteristicsForAProduct } from "../products/productsSlice";
@@ -26,8 +25,8 @@ export const saveRoll = createAsyncThunk("editRoll/saveRoll", async (formValues:
 
   const { productId, characteristicId } = formValues;
   const state = thunkAPI.getState() as RootState;
-  const product = state.products.products.items.find((p) => p.id == productId);
-  const characteristic = state.products.characteristics.items[productId].find((c) => c.id == characteristicId);
+  const product = state.products.products.items.find((p) => p.id === productId);
+  const characteristic = state.products.characteristics.items[productId].find((c) => c.id === characteristicId);
 
   if (!(product && characteristic)) {
     throw new Error("Product or characteristic referenced in the roll are not fetched.");
@@ -80,7 +79,7 @@ export const editRollSlice = createSlice({
     },
     setProductId: (state, action) => {
       const newProductId = action.payload;
-      if (newProductId != state.productId) {
+      if (newProductId !== state.productId) {
         state.productId = newProductId;
         state.characteristicId = undefined;
       }

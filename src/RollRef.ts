@@ -7,7 +7,7 @@ export class RollRef {
     if (`${id}${version}`.includes(RollRef.QRDelimiter)) {
       throw new Error("ID or Version of a roll must not contain a delimiter");
     }
-    if (id.length == 0 || version.length == 0) {
+    if (id.length === 0 || version.length == 0) {
       throw new Error("Both ID and Version must not be empty");
     }
     this.id = id;
@@ -23,7 +23,7 @@ export class RollRef {
       throw new ErrorIncorrectQrCode();
     }
     const [id, version] = code.split(RollRef.QRDelimiter);
-    if (id.length == 0 || version.length == 0) {
+    if (id.length === 0 || version.length === 0) {
       throw new ErrorIncorrectQrCode();
     }
     return new RollRef(id, version);

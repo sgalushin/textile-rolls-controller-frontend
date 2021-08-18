@@ -1,6 +1,3 @@
-import { Roll } from "../Roll";
-import { RollRef } from "../../RollRef";
-
 export interface EditRollState {
   productId?: string;
   characteristicId?: string;

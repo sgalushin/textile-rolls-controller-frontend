@@ -1,5 +1,3 @@
-import { Roll } from "../Roll";
-
 export interface CuttingStudioState {
   parent: {
     qrCode?: string;

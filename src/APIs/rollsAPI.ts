@@ -40,7 +40,7 @@ export const getRoll = async (ref: RollRef) => {
       validateStatus: (status) => [200, 404].includes(status),
     }
   );
-  if (res.status == 404) {
+  if (res.status === 404) {
     return null;
   }
   return res.data;

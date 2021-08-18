@@ -1,4 +1,4 @@
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { emptyCurrentDescendant, emptyCuttingStudioState } from "./CuttingStudioState";
 import { createDescendantRoll, getAllRollsByPhysicalId, getRoll } from "../../APIs/rollsAPI";
 import { ErrorIncorrectQrCode, RollRef } from "../../RollRef";
@@ -29,8 +29,8 @@ export const fetchAllDescendantRolls = createAsyncThunk(
     const rollsSortFunc = (a: any, b: any) => b.modified.localeCompare(a.modified);
     const res = await getAllRollsByPhysicalId(physicalId);
     // @ts-ignore
-    const latestVersions = [...new Set(res.Items.filter((r: any) => r.parentRoll?.id == id).map((r: any) => r.id))].map(
-      (id: string) => res.Items.filter((r: any) => r.id == id).sort(rollsSortFunc)[0]
+    const latestVersions = [...new Set(res.Items.filter((r: any) => r.parentRoll?.id === id).map((r: any) => r.id))].map(
+      (id: string) => res.Items.filter((r: any) => r.id === id).sort(rollsSortFunc)[0]
     );
     console.log(latestVersions);
     return latestVersions;
@@ -115,7 +115,7 @@ export const cuttingStudioSlice = createSlice({
     });
     builder.addCase(fetchParentRoll.rejected, (state, action) => {
       state.parent.loading = false;
-      state.parent.error = action.error.message == "Rejected" ? JSON.stringify(action.payload) : action.error.message;
+      state.parent.error = action.error.message === "Rejected" ? JSON.stringify(action.payload) : action.error.message;
       state.parent.roll = undefined;
     });
 
@@ -130,7 +130,7 @@ export const cuttingStudioSlice = createSlice({
     });
     builder.addCase(saveDescendantRoll.rejected, (state, action) => {
       state.currentDescendant.isSaving = false;
-      state.currentDescendant.error = action.error.message == "Rejected" ? JSON.stringify(action.payload) : action.error.message;
+      state.currentDescendant.error = action.error.message === "Rejected" ? JSON.stringify(action.payload) : action.error.message;
     });
 
     builder.addCase(fetchAllDescendantRolls.fulfilled, (state, action) => {

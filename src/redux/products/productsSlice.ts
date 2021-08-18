@@ -1,6 +1,5 @@
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { getAllCharacteristics, getAllProducts } from "../../APIs/productCatalogAPI";
-import { RootState } from "../store";
 import { emptyProductsState } from "./ProductsState";
 
 export const fetchAllProducts = createAsyncThunk("products/fetchAllProducts", async () => {
